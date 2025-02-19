@@ -15,3 +15,17 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", fadeInOnScroll);
     fadeInOnScroll(); // Run on page load
 });
+
+// Dark Mode Toggle
+document.addEventListener("DOMContentLoaded", function () {
+    const darkModeBtn = document.getElementById('darkModeBtn');
+
+    if (darkModeBtn) {  // Prevents error if button is missing
+        darkModeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            darkModeBtn.textContent = document.body.classList.contains('dark-mode') 
+                ? "☀️ Light Mode" 
+                : "🌙 Dark Mode";
+        });
+    }
+});
