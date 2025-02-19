@@ -26,6 +26,7 @@ body {
     font-size: 24px;
     font-weight: bold;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 60px; /* Prevents overlap with navbar */
 }
 
 /* Container Styling */
@@ -84,12 +85,20 @@ ul li {
 }
 
 /* Testimonials Section */
+.testimonial-container {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+}
 .testimonial {
-    background: #f9f9f9;
+    display: none;
     padding: 15px;
-    border-left: 5px solid #0073e6;
-    margin-top: 15px;
+    text-align: center;
     font-style: italic;
+}
+.testimonial.active {
+    display: block;
+    animation: fadeIn 1s ease-in-out;
 }
 
 /* Footer */
@@ -119,4 +128,68 @@ ul li {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #0073e6;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+.navbar ul {
+    list-style: none;
+    padding: 0;
+}
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+.navbar ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: #222;
+    color: white;
+}
+.dark-mode .section {
+    background: #333;
+}
+.dark-mode .button {
+    background: #ffcc00;
+    color: black;
+}
+.dark-mode .navbar {
+    background: #444;
+}
+.dark-mode .footer {
+    background: #444;
+}
+.dark-mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+.dark-mode-toggle button {
+    padding: 10px;
+    background: #0073e6;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.dark-mode-toggle button:hover {
+    background: #005bb5;
 }
