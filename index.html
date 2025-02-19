@@ -28,8 +28,9 @@
         <h1>Smart Inclusive Workplace Platform</h1>
     </div>
     
-    <!-- Welcome Section -->
+    <!-- Main Container -->
     <div class="container">
+        <!-- Welcome Section -->
         <div id="welcome" class="section scroll-animation">
             <h2>Welcome to SIWP</h2>
             <p>Our AI-powered platform helps match individuals with disabilities to suitable job roles while providing training and inclusivity tools for employers.</p>
@@ -77,37 +78,40 @@
                 <button type="submit" class="button">Send Message</button>
             </form>
         </div>
+
+        <!-- User Authentication System -->
+        <div id="auth-container" class="section scroll-animation">
+            <h2>User Login & Registration</h2>
+
+            <!-- Login Form -->
+            <div id="login-form" class="auth-form">
+                <h3>Login</h3>
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button onclick="loginUser()">Login</button>
+                <p>Don't have an account? <a href="#" onclick="toggleAuthForms()">Sign Up</a></p>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signup-form" class="auth-form hidden">
+                <h3>Sign Up</h3>
+                <input type="email" id="signup-email" placeholder="Email" required>
+                <input type="password" id="signup-password" placeholder="Password" required>
+                <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+                <button onclick="registerUser()">Sign Up</button>
+                <p>Already have an account? <a href="#" onclick="toggleAuthForms()">Login</a></p>
+            </div>
+
+            <!-- Logout Button (Only Visible After Login) -->
+            <button id="logout-btn" class="hidden" onclick="logoutUser()">Logout</button>
+        </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2025 SIWP. All rights reserved.</p>
     </footer>
-<!-- User Authentication System -->
-<div id="auth-container">
-    <!-- Login Form -->
-    <div id="login-form" class="auth-form">
-        <h2>Login</h2>
-        <input type="email" id="login-email" placeholder="Email" required>
-        <input type="password" id="login-password" placeholder="Password" required>
-        <button onclick="loginUser()">Login</button>
-        <p>Don't have an account? <a href="#" onclick="toggleAuthForms()">Sign Up</a></p>
-    </div>
 
-    <!-- Signup Form -->
-    <div id="signup-form" class="auth-form hidden">
-        <h2>Sign Up</h2>
-        <input type="email" id="signup-email" placeholder="Email" required>
-        <input type="password" id="signup-password" placeholder="Password" required>
-        <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
-        <button onclick="registerUser()">Sign Up</button>
-        <p>Already have an account? <a href="#" onclick="toggleAuthForms()">Login</a></p>
-    </div>
-
-    <!-- Logout Button (Only Visible After Login) -->
-    <button id="logout-btn" class="hidden" onclick="logoutUser()">Logout</button>
-</div>
-x
     <script src="script.js"></script>
 </body>
 </html>
