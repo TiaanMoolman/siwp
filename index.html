@@ -7,6 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#welcome">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <button id="darkModeBtn">🌙 Dark Mode</button>
+    </div>
+
     <!-- Header -->
     <div class="header">
         <h1>Smart Inclusive Workplace Platform</h1>
@@ -14,14 +30,14 @@
     
     <!-- Welcome Section -->
     <div class="container">
-        <div class="section scroll-animation">
+        <div id="welcome" class="section scroll-animation">
             <h2>Welcome to SIWP</h2>
             <p>Our AI-powered platform helps match individuals with disabilities to suitable job roles while providing training and inclusivity tools for employers.</p>
             <a href="#" class="button">Get Started</a>
         </div>
 
         <!-- Features Section -->
-        <div class="section scroll-animation">
+        <div id="features" class="section scroll-animation">
             <h2>Why Choose SIWP?</h2>
             <ul>
                 <li>🔹 AI-driven job matching</li>
@@ -31,17 +47,35 @@
             </ul>
         </div>
 
-        <!-- Testimonials Section -->
-        <div class="section scroll-animation">
+        <!-- Testimonials Section with Auto-Sliding -->
+        <div id="testimonials" class="section scroll-animation">
             <h2>What People Say</h2>
-            <div class="testimonial">
-                <p>"SIWP helped me find a job that fits my abilities. The AI-driven process made it easy!"</p>
-                <strong>- Alex M.</strong>
+            <div class="testimonial-container">
+                <div class="testimonial active">
+                    <p>"SIWP helped me find a job that fits my abilities. The AI-driven process made it easy!"</p>
+                    <strong>- Alex M.</strong>
+                </div>
+                <div class="testimonial">
+                    <p>"As an employer, I learned how to accommodate employees with disabilities thanks to SIWP."</p>
+                    <strong>- Sarah K.</strong>
+                </div>
+                <div class="testimonial">
+                    <p>"An amazing platform that bridges the gap for people with disabilities in the workplace."</p>
+                    <strong>- John D.</strong>
+                </div>
             </div>
-            <div class="testimonial">
-                <p>"As an employer, I learned how to accommodate employees with disabilities thanks to SIWP."</p>
-                <strong>- Sarah K.</strong>
-            </div>
+        </div>
+
+        <!-- Contact Us Section -->
+        <div id="contact" class="section scroll-animation">
+            <h2>Contact Us</h2>
+            <p>Have any questions? Reach out to us below!</p>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="button">Send Message</button>
+            </form>
         </div>
     </div>
 
@@ -49,8 +83,31 @@
     <footer class="footer">
         <p>&copy; 2025 SIWP. All rights reserved.</p>
     </footer>
+<!-- User Authentication System -->
+<div id="auth-container">
+    <!-- Login Form -->
+    <div id="login-form" class="auth-form">
+        <h2>Login</h2>
+        <input type="email" id="login-email" placeholder="Email" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button onclick="loginUser()">Login</button>
+        <p>Don't have an account? <a href="#" onclick="toggleAuthForms()">Sign Up</a></p>
+    </div>
 
+    <!-- Signup Form -->
+    <div id="signup-form" class="auth-form hidden">
+        <h2>Sign Up</h2>
+        <input type="email" id="signup-email" placeholder="Email" required>
+        <input type="password" id="signup-password" placeholder="Password" required>
+        <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+        <button onclick="registerUser()">Sign Up</button>
+        <p>Already have an account? <a href="#" onclick="toggleAuthForms()">Login</a></p>
+    </div>
+
+    <!-- Logout Button (Only Visible After Login) -->
+    <button id="logout-btn" class="hidden" onclick="logoutUser()">Logout</button>
+</div>
+x
     <script src="script.js"></script>
 </body>
 </html>
-
