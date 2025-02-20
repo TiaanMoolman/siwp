@@ -1,42 +1,47 @@
-// Toggle Chatbot Visibility
-function toggleChatbot() {
-    const chatbotContainer = document.getElementById("chatbot-container");
-    chatbotContainer.style.display = chatbotContainer.style.display === "block" ? "none" : "block";
-}
+// Scroll Animation
+document.addEventListener("DOMContentLoaded", function () {
+    let elements = document.querySelectorAll(".scroll-animation");
 
-// Handle Chatbot Input
-function handleChatbotInput(event) {
-    if (event.key === "Enter") {
-        const inputField = event.target;
-        const userMessage = inputField.value;
-        if (userMessage.trim() !== "") {
-            displayMessage(userMessage, "user-message");
-            inputField.value = "";
-            getChatbotResponse(userMessage);
-        }
+    function fadeInOnScroll() {
+        elements.forEach((element) => {
+            let rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                element.style.opacity = "1";
+                element.style.transform = "translateY(0)";
+            }
+        });
     }
-}
 
-// Display Message in Chatbot
-function displayMessage(message, className) {
-    const chatbotBody = document.getElementById("chatbot-body");
-    const messageElement = document.createElement("div");
-    messageElement.className = `chatbot-message ${className}`;
-    messageElement.textContent = message;
-    chatbotBody.appendChild(messageElement);
-    chatbotBody.scrollTop = chatbotBody.scrollHeight;
-}
+    window.addEventListener("scroll", fadeInOnScroll);
+    fadeInOnScroll();
+});
 
-// Get Chatbot Response
-function getChatbotResponse(userMessage) {
-    let botResponse = "I'm still learning. Please contact support for detailed queries.";
-    setTimeout(() => {
-        displayMessage(botResponse, "bot-message");
-    }, 1000);
-}
+// Dark Mode Toggle
+const darkModeBtn = document.getElementById('darkModeBtn');
+darkModeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    darkModeBtn.textContent = document.body.classList.contains('dark-mode') ? "☀️ Light Mode" : "🌙 Dark Mode";
+});
 
 // Toggle Authentication Forms
-function toggleAuthForms() {
-    document.getElementById("login-form").classList.toggle("hidden");
-    document.getElementById("signup-form").classList.toggle("hidden");
+function toggleAuthContainer() {
+    const authContainer = document.getElementById("auth-container");
+    authContainer.classList.toggle("active");
+}
+
+// Chatbot Toggle
+function toggleChatbot() {
+    const chatbotContainer = document.getElementById("chatbot-container");
+    chatbotContainer.style.display = chatbotContainer.style.display === "none" || chatbotContainer.style.display === "" ? "block" : "none";
+}
+
+// Chatbot Input Handler
+function handleChatbotInput(event) {
+    if (event.key === "Enter") {
+        const input = event.target.value;
+        const chatBody = document.getElementById("chatbot-body");
+        const userMessage = `<div class="chatbot-message user-message">${input}</div>`;
+        chatBody.innerHTML += userMessage;
+        event.target.value = "";
+    }
 }
