@@ -1,66 +1,72 @@
-/* General Styling */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIWP - Smart Inclusive Workplace Platform</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
 
-body {
-    background: linear-gradient(to right, #e3f2fd, #bbdefb);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#welcome">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-.header {
-    width: 100%;
-    background: #0073e6;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <button id="darkModeBtn">🌙 Dark Mode</button>
+    </div>
 
-.section {
-    background: white;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards;
-}
+    <!-- Header -->
+    <div class="header">
+        <h1>Smart Inclusive Workplace Platform</h1>
+    </div>
+    
+    <!-- Welcome Section -->
+    <div class="container">
+        <div id="welcome" class="section scroll-animation">
+            <h2>Welcome to SIWP</h2>
+            <p>Our AI-powered platform helps match individuals with disabilities to suitable job roles while providing training and inclusivity tools for employers.</p>
+            <a href="#" class="button">Get Started</a>
+        </div>
 
-.hidden {
-    display: none;
-}
+        <!-- Features Section -->
+        <div id="features" class="section scroll-animation">
+            <h2>Why Choose SIWP?</h2>
+            <ul>
+                <li>🔹 AI-driven job matching</li>
+                <li>🔹 Accessibility support for employees</li>
+                <li>🔹 Employer inclusivity training</li>
+                <li>🔹 Custom AI automation for workflow</li>
+            </ul>
+        </div>
 
-.auth-form {
-    margin-top: 20px;
-    text-align: center;
-}
+        <!-- Testimonials Section -->
+        <div id="testimonials" class="section scroll-animation">
+            <h2>What People Say</h2>
+            <div class="testimonial">
+                <p>"SIWP helped me find a job that fits my abilities. The AI-driven process made it easy!"</p>
+                <strong>- Alex M.</strong>
+            </div>
+            <div class="testimonial">
+                <p>"As an employer, I learned how to accommodate employees with disabilities thanks to SIWP."</p>
+                <strong>- Sarah K.</strong>
+            </div>
+        </div>
+    </div>
 
-.auth-form input {
-    display: block;
-    margin: 10px auto;
-    padding: 10px;
-    width: 80%;
-}
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 SIWP. All rights reserved.</p>
+    </footer>
 
-.auth-form button {
-    padding: 10px 20px;
-    background: #0073e6;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.auth-form button:hover {
-    background: #005bb5;
-}
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
