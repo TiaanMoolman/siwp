@@ -15,7 +15,7 @@
             <li><a href="#features">Features</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="#" onclick="toggleAuthForms()">Login</a></li>
+            <li><a href="#" onclick="toggleAuthContainer()">Login</a></li>
         </ul>
     </nav>
 
@@ -70,7 +70,7 @@
     </footer>
 
     <!-- User Authentication System -->
-    <div id="auth-container" class="hidden">
+    <div id="auth-container" class="auth-container hidden">
         <div id="login-form" class="auth-form">
             <h2>Login</h2>
             <input type="email" id="login-email" placeholder="Email" required>
@@ -83,6 +83,7 @@
             <h2>Sign Up</h2>
             <input type="email" id="signup-email" placeholder="Email" required>
             <input type="password" id="signup-password" placeholder="Password" required>
+            <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
             <button onclick="registerUser()">Sign Up</button>
             <p>Already have an account? <a href="#" onclick="toggleAuthForms()">Login</a></p>
         </div>
