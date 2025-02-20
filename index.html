@@ -1,117 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIWP - Smart Inclusive Workplace Platform</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="#welcome">Home</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+body {
+    background: linear-gradient(to right, #e3f2fd, #bbdefb);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-    <!-- Dark Mode Toggle -->
-    <div class="dark-mode-toggle">
-        <button id="darkModeBtn">🌙 Dark Mode</button>
-    </div>
+.header {
+    width: 100%;
+    background: #0073e6;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 
-    <!-- Header -->
-    <div class="header">
-        <h1>Smart Inclusive Workplace Platform</h1>
-    </div>
-    
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Welcome Section -->
-        <div id="welcome" class="section scroll-animation">
-            <h2>Welcome to SIWP</h2>
-            <p>Our AI-powered platform helps match individuals with disabilities to suitable job roles while providing training and inclusivity tools for employers.</p>
-            <a href="#" class="button">Get Started</a>
-        </div>
+.section {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
 
-        <!-- Features Section -->
-        <div id="features" class="section scroll-animation">
-            <h2>Why Choose SIWP?</h2>
-            <ul>
-                <li>🔹 AI-driven job matching</li>
-                <li>🔹 Accessibility support for employees</li>
-                <li>🔹 Employer inclusivity training</li>
-                <li>🔹 Custom AI automation for workflow</li>
-            </ul>
-        </div>
+.hidden {
+    display: none;
+}
 
-        <!-- Testimonials Section with Auto-Sliding -->
-        <div id="testimonials" class="section scroll-animation">
-            <h2>What People Say</h2>
-            <div class="testimonial-container">
-                <div class="testimonial active">
-                    <p>"SIWP helped me find a job that fits my abilities. The AI-driven process made it easy!"</p>
-                    <strong>- Alex M.</strong>
-                </div>
-                <div class="testimonial">
-                    <p>"As an employer, I learned how to accommodate employees with disabilities thanks to SIWP."</p>
-                    <strong>- Sarah K.</strong>
-                </div>
-                <div class="testimonial">
-                    <p>"An amazing platform that bridges the gap for people with disabilities in the workplace."</p>
-                    <strong>- John D.</strong>
-                </div>
-            </div>
-        </div>
+.auth-form {
+    margin-top: 20px;
+    text-align: center;
+}
 
-        <!-- Contact Us Section -->
-        <div id="contact" class="section scroll-animation">
-            <h2>Contact Us</h2>
-            <p>Have any questions? Reach out to us below!</p>
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit" class="button">Send Message</button>
-            </form>
-        </div>
+.auth-form input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+}
 
-        <!-- User Authentication System -->
-        <div id="auth-container" class="section scroll-animation">
-            <h2>User Login & Registration</h2>
+.auth-form button {
+    padding: 10px 20px;
+    background: #0073e6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
-            <!-- Login Form -->
-            <div id="login-form" class="auth-form">
-                <h3>Login</h3>
-                <input type="email" id="login-email" placeholder="Email" required>
-                <input type="password" id="login-password" placeholder="Password" required>
-                <button onclick="loginUser()">Login</button>
-                <p>Don't have an account? <a href="#" onclick="toggleAuthForms()">Sign Up</a></p>
-            </div>
-
-            <!-- Signup Form -->
-            <div id="signup-form" class="auth-form hidden">
-                <h3>Sign Up</h3>
-                <input type="email" id="signup-email" placeholder="Email" required>
-                <input type="password" id="signup-password" placeholder="Password" required>
-                <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
-                <button onclick="registerUser()">Sign Up</button>
-                <p>Already have an account? <a href="#" onclick="toggleAuthForms()">Login</a></p>
-            </div>
-
-            <!-- Logout Button (Only Visible After Login) -->
-            <button id="logout-btn" class="hidden" onclick="logoutUser()">Logout</button>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 SIWP. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+.auth-form button:hover {
+    background: #005bb5;
+}
