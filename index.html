@@ -68,5 +68,21 @@
 
     <!-- Script -->
     <script src="script.js"></script>
+    <!-- AI Chatbot Widget -->
+<div class="chatbot-container" id="chatbot-container">
+    <div class="chatbot-header">
+        <h3>AI Chatbot</h3>
+        <button onclick="toggleChatbot()" class="chatbot-close-btn">✖</button>
+    </div>
+    <div class="chatbot-body" id="chatbot-body">
+        <div class="chatbot-message bot-message">
+            Hi there! How can I assist you today?
+        </div>
+    </div>
+    <input type="text" id="chatbot-input" placeholder="Type a message..." onkeypress="handleChatbotInput(event)">
+</div>
+
+<!-- Chatbot Toggle Button -->
+<button class="chatbot-toggle" onclick="toggleChatbot()">💬 Chat with Us</button>
 </body>
 </html>
