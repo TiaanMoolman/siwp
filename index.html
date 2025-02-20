@@ -15,6 +15,7 @@
             <li><a href="#features">Features</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="#" onclick="toggleAuthForms()">Login</a></li>
         </ul>
     </nav>
 
@@ -50,13 +51,15 @@
         <!-- Testimonials Section -->
         <div id="testimonials" class="section scroll-animation">
             <h2>What People Say</h2>
-            <div class="testimonial">
-                <p>"SIWP helped me find a job that fits my abilities. The AI-driven process made it easy!"</p>
-                <strong>- Alex M.</strong>
-            </div>
-            <div class="testimonial">
-                <p>"As an employer, I learned how to accommodate employees with disabilities thanks to SIWP."</p>
-                <strong>- Sarah K.</strong>
+            <div class="testimonial-container">
+                <div class="testimonial active">
+                    <p>"SIWP helped me find a job that fits my abilities. The AI-driven process made it easy!"</p>
+                    <strong>- Alex M.</strong>
+                </div>
+                <div class="testimonial">
+                    <p>"As an employer, I learned how to accommodate employees with disabilities thanks to SIWP."</p>
+                    <strong>- Sarah K.</strong>
+                </div>
             </div>
         </div>
     </div>
@@ -66,23 +69,42 @@
         <p>&copy; 2025 SIWP. All rights reserved.</p>
     </footer>
 
-    <!-- Script -->
-    <script src="script.js"></script>
-    <!-- AI Chatbot Widget -->
-<div class="chatbot-container" id="chatbot-container">
-    <div class="chatbot-header">
-        <h3>AI Chatbot</h3>
-        <button onclick="toggleChatbot()" class="chatbot-close-btn">✖</button>
-    </div>
-    <div class="chatbot-body" id="chatbot-body">
-        <div class="chatbot-message bot-message">
-            Hi there! How can I assist you today?
+    <!-- User Authentication System -->
+    <div id="auth-container" class="hidden">
+        <div id="login-form" class="auth-form">
+            <h2>Login</h2>
+            <input type="email" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button onclick="loginUser()">Login</button>
+            <p>Don't have an account? <a href="#" onclick="toggleAuthForms()">Sign Up</a></p>
+        </div>
+
+        <div id="signup-form" class="auth-form hidden">
+            <h2>Sign Up</h2>
+            <input type="email" id="signup-email" placeholder="Email" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <button onclick="registerUser()">Sign Up</button>
+            <p>Already have an account? <a href="#" onclick="toggleAuthForms()">Login</a></p>
         </div>
     </div>
-    <input type="text" id="chatbot-input" placeholder="Type a message..." onkeypress="handleChatbotInput(event)">
-</div>
 
-<!-- Chatbot Toggle Button -->
-<button class="chatbot-toggle" onclick="toggleChatbot()">💬 Chat with Us</button>
+    <!-- AI Chatbot Widget -->
+    <div class="chatbot-container" id="chatbot-container">
+        <div class="chatbot-header">
+            <h3>AI Chatbot</h3>
+            <button onclick="toggleChatbot()" class="chatbot-close-btn">✖</button>
+        </div>
+        <div class="chatbot-body" id="chatbot-body">
+            <div class="chatbot-message bot-message">
+                Hi there! How can I assist you today?
+            </div>
+        </div>
+        <input type="text" id="chatbot-input" placeholder="Type a message..." onkeypress="handleChatbotInput(event)">
+    </div>
+
+    <!-- Chatbot Toggle Button -->
+    <button class="chatbot-toggle" onclick="toggleChatbot()">💬 Chat with Us</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
